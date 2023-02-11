@@ -1,4 +1,4 @@
-export const VOICE_CONTROLS = {
+export const VOICE_CONTROLS: { [key: string]: string } = {
   home: "home",
   about: "about",
   services: "services",

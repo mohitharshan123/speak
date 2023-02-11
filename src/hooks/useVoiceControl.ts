@@ -1,7 +1,12 @@
-import { useSpeechContext } from "@speechly/react-client";
 import { useEffect } from "react";
+import { useSpeechContext } from "@speechly/react-client";
 
-const useVoiceControl = ({ voiceControls }) => {
+interface VoiceControlProps {
+  voiceControls: {
+    [key: string]: string;
+  }[];
+}
+const useVoiceControl = ({ voiceControls }: VoiceControlProps) => {
   const { segment, attachMicrophone, start } = useSpeechContext();
 
   useEffect(() => {
@@ -13,7 +18,7 @@ const useVoiceControl = ({ voiceControls }) => {
       const control = segment.words[0]?.value;
       if (!voiceControls[control]) return;
       const element = document.getElementById(control);
-      if (!element) return;
+      if (!element || !element.click) return;
       element.click();
     }
   }, [segment]);

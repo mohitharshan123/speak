@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { SpeechProvider } from "@speechly/react-client";
 
 import "./App.css";
 import About from "./components/About";
@@ -6,7 +7,6 @@ import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Services from "./components/Services";
-import { SpeechProvider } from "@speechly/react-client";
 import Main from "./components/Main";
 import { VOICE_CONTROLS } from "./constants";
 
